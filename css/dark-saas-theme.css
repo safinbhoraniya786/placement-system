@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap');
+
+:root {
+  --saas-bg: #0b0f19;
+  --saas-surface: rgba(255, 255, 255, 0.04);
+  --saas-surface-strong: rgba(255, 255, 255, 0.07);
+  --saas-border: rgba(255, 255, 255, 0.1);
+  --saas-text: #ffffff;
+  --saas-muted: #94a3b8;
+  --saas-gold: #E8C777;
+  --saas-gold-hover: #f1d58d;
+  --saas-danger: #ff8b8b;
+  --saas-success: #7ee2a8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: radial-gradient(circle at 50% 10%, rgba(30, 20, 35, 0.9) 0%, #0b0f19 85%);
+  color: var(--saas-text);
+  font-family: 'Heebo', Arial, sans-serif;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 { color: var(--saas-text); }
+p, .subtitle, .who, .form-footer-link, .back-link { color: var(--saas-muted); }
+a { color: inherit; }
+a[style] { color: var(--saas-gold) !important; }
+
+header, .dash-header {
+  background: rgba(11, 15, 25, 0.85);
+  border-bottom: 1px solid var(--saas-border);
+  color: var(--saas-text);
+  backdrop-filter: blur(12px);
+}
+
+.brand, .brand span, .eyebrow, .card h3, .drive-info h3, .app-info h3 { color: var(--saas-gold); }
+.brand { color: var(--saas-text); }
+
+.card, .form-card, .container, .drive-card, .app-card, .result-box, .dash-body .card {
+  background: var(--saas-surface);
+  border: 1px solid var(--saas-border);
+  box-shadow: none;
+  color: var(--saas-text);
+}
+
+.card, .form-card, .container, .drive-card, .app-card, .dash-body .card {
+  border-radius: 12px;
+}
+
+.card p, .drive-info p, .app-info p, .container > p, p[style] { color: var(--saas-muted) !important; }
+.container div[style*="background"] {
+  background: var(--saas-surface-strong) !important;
+  border: 1px solid var(--saas-border);
+  color: var(--saas-muted) !important;
+}
+
+input, textarea, select, .field input, .field select, .card__input, .form-control {
+  background: rgba(11, 15, 25, 0.72) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 6px;
+  color: var(--saas-text) !important;
+  font: inherit;
+}
+
+input::placeholder, textarea::placeholder { color: #718096; }
+input:focus, textarea:focus, select:focus, .field input:focus, .field select:focus {
+  outline: 2px solid rgba(232, 199, 119, 0.38);
+  outline-offset: 1px;
+  border-color: var(--saas-gold) !important;
+}
+label, .field label, label[style] { color: var(--saas-text) !important; }
+
+button, .btn, .btn-primary, .btn-secondary, .card__button, .action-btn, .back-link {
+  background: var(--saas-gold) !important;
+  border: 1px solid var(--saas-gold) !important;
+  border-radius: 6px;
+  color: #0b0f19 !important;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+button:hover, .btn:hover, .btn-primary:hover, .btn-secondary:hover, .card__button:hover, .action-btn:hover, .back-link:hover {
+  background: var(--saas-gold-hover) !important;
+  border-color: var(--saas-gold-hover) !important;
+  color: #0b0f19 !important;
+}
+
+.logout, .logout-btn {
+  color: var(--saas-danger) !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.status, .status-badge, .badge { color: var(--saas-gold) !important; }
+.status-badge, .badge { background: rgba(232, 199, 119, 0.14); border: 1px solid rgba(232, 199, 119, 0.34); }
+
+.alert, .message, .success, .error, .alert-success, .alert-error {
+  border: 1px solid var(--saas-border);
+  background: var(--saas-surface-strong) !important;
+}
+.success, .alert-success { color: var(--saas-success) !important; }
+.error, .alert-error { color: var(--saas-danger) !important; }
+
+table { background: var(--saas-surface); color: var(--saas-text); }
+th, td { border-color: var(--saas-border) !important; }
+th { background: rgba(232, 199, 119, 0.14) !important; color: var(--saas-gold) !important; }
+tr:nth-child(even) { background: rgba(255, 255, 255, 0.025) !important; }
+
+footer { background: rgba(11, 15, 25, 0.78); border-top-color: var(--saas-border); color: var(--saas-muted); }
+
+/* Admin dashboard: keep primary actions compact and aligned. */
+.dash-body {
+  max-width: 1000px;
+  margin: clamp(32px, 7vw, 72px) auto;
+  padding: 0 24px;
+}
+.dash-body .card {
+  max-width: 720px;
+  padding: clamp(24px, 4vw, 36px);
+}
+.dash-body .action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+.dash-body .action-buttons .btn-primary,
+.dash-body .action-buttons .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-height: 42px;
+  margin: 0;
+  padding: 10px 18px;
+}
+
+/* Admin login: retain the page background and present one well-aligned card. */
+.form-wrap {
+  min-height: 100vh;
+  padding: 32px 20px;
+  background: transparent;
+}
+.form-card {
+  width: min(100%, 440px);
+  margin: auto;
+  padding: clamp(28px, 5vw, 40px);
+}
+.form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.form-card .btn-primary {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 120px;
+  min-height: 42px;
+  margin-top: 8px;
+  padding: 10px 18px;
+}
+
+@media (max-width: 640px) {
+  header, .dash-header { padding-left: 20px; padding-right: 20px; }
+  .container, .form-card { width: calc(100% - 32px); }
+  .dash-body { padding: 0 16px; }
+}
+
+/* Shared interaction rhythm: loaded by every login, student, and admin screen. */
+a, button, input, textarea, select, .card, .form-card, .container, .drive-card, .app-card {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease,
+    box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+button, .btn, .btn-primary, .btn-secondary, .action-btn, .card__button {
+  min-height: 42px;
+  padding: 10px 18px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.card:hover, .form-card:hover, .drive-card:hover, .app-card:hover {
+  border-color: rgba(232, 199, 119, 0.34);
+}
+
+input, textarea, select { min-height: 42px; }
+textarea { min-height: 96px; }
+
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--saas-gold);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  button, .btn, .btn-primary, .btn-secondary, .action-btn, .card__button { width: 100%; }
+  .action-row .btn, .action-buttons .btn-primary, .action-buttons .btn-secondary { width: auto; }
+}
